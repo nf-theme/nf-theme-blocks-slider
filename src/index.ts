@@ -14,5 +14,5 @@ export default function handler(options: any): Rule {
     move(options.path)
   ]);
   const block_js_file_path = path.resolve(process.cwd(), 'resources', 'assets', 'scripts', 'blocks', 'index.js');
-  return chain([mergeWith(templateSource), packageIntall({ packageName: 'slick-carousel' }), appendTo(block_js_file_path, "import './slider'")]);
+  return chain([mergeWith(templateSource), appendTo(block_js_file_path, "import './slider'"), packageIntall({ packageName: 'slick-carousel' })]);
 }
